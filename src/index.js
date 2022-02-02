@@ -2,8 +2,6 @@ import React from "react";
 import reactDom from "react-dom";
 import './index.css';
 
-// const fieldSize = 3 
-
 class Game extends React.Component {
     constructor(props) {
         super(props);
@@ -103,13 +101,10 @@ class Square extends React.Component {
     }
 }
 
-// function Square(props) {
-//     return (
-//         <button className="square" onClick={props.onClick}>
-//             {props.value}
-//         </button>
-//     )
-// }
+function makeSizeArray(fieldSize) {
+    return new Array(fieldSize).fill().map((_, i) => i);
+}
+window.makeSizeArray = makeSizeArray
 
 reactDom.render(
     <React.StrictMode>
@@ -137,25 +132,3 @@ function calculateWinner(squares) {
     }
     return null
 }
-
-function makeSizeArray(fieldSize) {
-    return new Array(fieldSize).fill().map((_, i) => i);
-    // const lenField = [];
-    // for (let i = 0; i < fieldSize; i++) {
-    //     lenField.push(i)
-    // }
-    // return lenField
-}
-window.makeSizeArray = makeSizeArray
-
-// let winLines = [];
-// for (let line = 0; line < fieldSize; line++) {
-//     let cols = [];
-//     let rows = [];
-// 	for (let square = 0; square < fieldSize; square++) {
-//         cols.push(line * fieldSize + square)
-//         rows.push(line + fieldSize * square)
-//     }
-//     winLines.push(cols, rows)
-// }
-// console.log(winLines)
