@@ -1,0 +1,93 @@
+@import "~bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100&family=Ubuntu:wght@300&display=swap");
+
+#root {
+    @extend .container;
+    max-width: 90% !important;
+}
+
+.carousel-grid {
+    display: grid;
+    grid-template-rows: 2fr auto;
+    grid-template-columns: 1fr 2fr;
+
+    &__text {
+        grid-column: 1;
+        grid-row-start: span 2;
+    }
+
+    &__indicators {
+        grid-column: 2;
+        grid-row: 2;
+        display: flex;
+        align-items: center;
+        .page-indicator {
+            width: 100%;
+            grid-row: 2;
+            display: flex;
+            align-items: center;
+            margin: 20px 10px;
+        }
+        .btn {
+            border-radius: 0;
+            width: 100%;
+            padding: 2px;
+        }
+        .btn-sm {
+            margin: 10px;
+            border: 1px #4b4b4b;
+        }
+    }
+}
+
+.carousel-inner {
+    height: 470px !important;
+    padding-top: 40px;
+}
+
+.carousel-card {
+    color: #fff;
+    border-radius: 15px;
+    overflow: visible;
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: linear;
+
+    &__image {
+        width: 290px;
+        height: 390px;
+        border-radius: inherit !important;
+    }
+
+    &__overlay {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        backdrop-filter: blur(2px);
+        border-bottom-left-radius: inherit;
+        border-bottom-right-radius: inherit;
+        padding: 30px 35px;
+
+        .dropdown-divider {
+            border-color: #b2b2b2;
+            width: 15%;
+            border-width: 2px;
+        }
+    }
+
+    &__hovered {
+        // width: 345px; //1.18
+        // height: 470px; // 1.2
+        transform: scale(1.2);
+    }
+
+    &__type {
+        font-family: "Jost", sans-serif;
+    }
+
+    .card-title {
+        font-family: "Ubuntu" sans-serif;
+        font-weight: 700;
+    }
+}
